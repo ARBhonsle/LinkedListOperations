@@ -2,15 +2,17 @@ package com.linkedlist;
 
 /**
  * Interface with methods for performing Linked List operations
- * @param <K>
+ * @param <Integer>
  */
-public interface INode<K> {
+public interface INode<Integer> {
     // method to get variable key value
-    K getKey();
+    Integer getKey();
     // method to set variable key value
-    void setKey(K key);
+    void setKey(Integer key);
     // method to get next node
-    INode<K> getNext();
+    INode<Integer> getNext();
     // method to set next node
-    void setNext(INode<K> next);
+    void setNext(INode<Integer> next);
+    // method displays node value and next node
+    String displayKey();
 }

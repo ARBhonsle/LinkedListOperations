@@ -11,6 +11,7 @@ public class Node<K> implements INode<K> {
     // constructor
     public Node(K key) {
         this.key = key;
+        this.next=null;
     }
     // method to get key value
     @Override
@@ -31,11 +32,12 @@ public class Node<K> implements INode<K> {
         this.next = next;
     }
     // method to display variable key value and next node if exist
-    public String printString() {
+    public String displayKey() {
         StringBuilder myNodeString = new StringBuilder();
-        myNodeString.append("MyNode{" + "key=").append(key).append("}");
-        if (next != null)
-            myNodeString.append("->").append(next);
+        myNodeString.append("{" + "key=").append(key).append("}").append("->");
+        if(next==null){
+            myNodeString.append("Null");
+        }
         return myNodeString.toString();
     }
 }
