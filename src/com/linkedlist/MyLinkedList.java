@@ -6,14 +6,14 @@ package com.linkedlist;
  * @param <K>
  */
 public class MyLinkedList<K> {
-    // head and tail of linked list set
+    // head of linked list
     public INode<K> head;
 
-    // constructor defined
+    // constructor
     public MyLinkedList() {
         this.head = null;
     }
-    // display linked list
+    // displays linked list
     public void displayLinkedList(){
         if(head!=null){
             INode<K> temp=head;
@@ -24,7 +24,7 @@ public class MyLinkedList<K> {
             System.out.println("null");
         }
     }
-    // add node to head
+    // adds node at head
     public void addNode(INode<K> myNode) {
         if (this.head == null) {
             this.head = myNode;
@@ -35,7 +35,7 @@ public class MyLinkedList<K> {
         }
     }
 
-    // add node to end of list
+    // adds node at end of list
     public void appendNode(INode<K> myNode) {
         if (this.head == null) {
             this.head = myNode;
