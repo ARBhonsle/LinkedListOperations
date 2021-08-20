@@ -13,7 +13,6 @@ public class MyLinkedList<K> {
     public MyLinkedList() {
         this.head = null;
     }
-
     // displays linked list
     public void displayLinkedList() {
         System.out.print("Display linked list: ");
@@ -22,11 +21,11 @@ public class MyLinkedList<K> {
             while (temp != null) {
                 System.out.print(temp.getKey() + "->");
                 temp = temp.getNext();
+
             }
             System.out.println("null");
         }
     }
-
     // adds node at head
     public void addNode(INode<K> myNode) {
         System.out.println("Adding at head of linked list: "+myNode.getKey());
