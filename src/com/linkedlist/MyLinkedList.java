@@ -6,15 +6,15 @@ package com.linkedlist;
  * @param <K>
  */
 public class MyLinkedList<K> {
-    // head and tail of linked list set
+    // head of linked list
     public INode<K> head;
 
-    // constructor defined
+    // constructor
     public MyLinkedList() {
         this.head = null;
     }
 
-    // display linked list
+    // displays linked list
     public void displayLinkedList() {
         System.out.print("Display linked list: ");
         if (head != null) {
@@ -27,7 +27,7 @@ public class MyLinkedList<K> {
         }
     }
 
-    // add node to head
+    // adds node at head of linked list
     public void addNode(INode<K> myNode) {
         System.out.println("Adding at head of linked list: "+myNode.getKey());
         if (this.head == null) {
@@ -39,7 +39,7 @@ public class MyLinkedList<K> {
         }
     }
 
-    // add node to end of list
+    // adds node at end of list
     public void appendNode(INode<K> myNode) {
         System.out.println("Adding at End of linked list: "+myNode.getKey());
         if (this.head == null) {
@@ -53,7 +53,7 @@ public class MyLinkedList<K> {
         }
     }
 
-    // insert node between two keys
+    // inserts node between two keys
     public void insertBetweenTwoKeys(K keyPrev, K keyNext, INode<K> myNode) {
         System.out.println("Insert between nodes: "+keyPrev+" and "+keyNext+" key: "+myNode.getKey());
         INode<K> node = myNode;
@@ -72,11 +72,25 @@ public class MyLinkedList<K> {
             System.out.println("List is empty");
         }
     }
-    // delete node at head of list
-    public void deleteNodeAtHead(){
+    // deletes node at head of list
+    public void pop(){
         System.out.println("Delete node at head of linked list: ");
         if(this.head!=null){
             head=head.getNext();
+        }else{
+            System.out.println("List is empty");
+        }
+    }
+    // deletes node at end of linked list
+    public void popLast(){
+        System.out.println("Delete node at end of linked list: ");
+        if(this.head!=null){
+            INode<K> tempNode=head,temp=head;
+            while (tempNode.getNext()!=null){
+                temp=tempNode;
+                tempNode=tempNode.getNext();
+            }
+            temp.setNext(null);
         }else{
             System.out.println("List is empty");
         }
@@ -97,8 +111,8 @@ public class MyLinkedList<K> {
         linkedList.appendNode(nodeThree);
         // displays list values
         linkedList.displayLinkedList();
-        // delete node at head
-        linkedList.deleteNodeAtHead();
+        // delete node at end of linked list
+        linkedList.popLast();
         // display final list
         linkedList.displayLinkedList();
     }
