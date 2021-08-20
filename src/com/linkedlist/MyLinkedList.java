@@ -29,7 +29,7 @@ public class MyLinkedList<K> {
 
     // adds node at head of linked list
     public void addNode(INode<K> myNode) {
-        System.out.println("Adding at head of linked list: "+myNode.getKey());
+        System.out.println("Adding at head of linked list: " + myNode.getKey());
         if (this.head == null) {
             this.head = myNode;
         } else {
@@ -41,7 +41,7 @@ public class MyLinkedList<K> {
 
     // adds node at end of list
     public void appendNode(INode<K> myNode) {
-        System.out.println("Adding at End of linked list: "+myNode.getKey());
+        System.out.println("Adding at End of linked list: " + myNode.getKey());
         if (this.head == null) {
             this.head = myNode;
         } else {
@@ -55,7 +55,7 @@ public class MyLinkedList<K> {
 
     // inserts node between two keys
     public void insertBetweenTwoKeys(K keyPrev, K keyNext, INode<K> myNode) {
-        System.out.println("Insert between nodes: "+keyPrev+" and "+keyNext+" key: "+myNode.getKey());
+        System.out.println("Insert between nodes: " + keyPrev + " and " + keyNext + " key: " + myNode.getKey());
         INode<K> node = myNode;
         if (this.head != null) {
             INode<K> temp = head, tempPrev = head;
@@ -65,33 +65,56 @@ public class MyLinkedList<K> {
                     temp.setNext(node);
                     break;
                 }
-                temp=tempPrev;
+                temp = tempPrev;
                 tempPrev = tempPrev.getNext();
             }
         } else {
             System.out.println("List is empty");
         }
     }
+
     // deletes node at head of list
-    public void pop(){
+    public void pop() {
         System.out.println("Delete node at head of linked list: ");
-        if(this.head!=null){
-            head=head.getNext();
-        }else{
+        if (this.head != null) {
+            head = head.getNext();
+        } else {
             System.out.println("List is empty");
         }
     }
+
     // deletes node at end of linked list
-    public void popLast(){
+    public void popLast() {
         System.out.println("Delete node at end of linked list: ");
-        if(this.head!=null){
-            INode<K> tempNode=head,temp=head;
-            while (tempNode.getNext()!=null){
-                temp=tempNode;
-                tempNode=tempNode.getNext();
+        if (this.head != null) {
+            INode<K> tempNode = head, temp = head;
+            while (tempNode.getNext() != null) {
+                temp = tempNode;
+                tempNode = tempNode.getNext();
             }
             temp.setNext(null);
-        }else{
+        } else {
+            System.out.println("List is empty");
+        }
+    }
+
+    // searches node with given key parameter
+    public void searchNode(K key) {
+        if (this.head != null) {
+            INode<K> temp = head;
+            boolean keyFound = false;
+            while (temp.getNext() != null) {
+                if (temp.getKey() == key) {
+                    System.out.println("Key " + key + " is found");
+                    keyFound = true;
+                    break;
+                }
+                temp = temp.getNext();
+            }
+            if (!keyFound) {
+                System.out.println("Key " + key + " not found in linked list");
+            }
+        } else {
             System.out.println("List is empty");
         }
     }
@@ -111,8 +134,8 @@ public class MyLinkedList<K> {
         linkedList.appendNode(nodeThree);
         // displays list values
         linkedList.displayLinkedList();
-        // delete node at end of linked list
-        linkedList.popLast();
+        // searches node in linked list
+        linkedList.searchNode(30);
         // display final list
         linkedList.displayLinkedList();
     }
