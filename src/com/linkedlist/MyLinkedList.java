@@ -72,6 +72,15 @@ public class MyLinkedList<K> {
             System.out.println("List is empty");
         }
     }
+    // delete node at head of list
+    public void deleteNodeAtHead(){
+        System.out.println("Delete node at head of linked list: ");
+        if(this.head!=null){
+            head=head.getNext();
+        }else{
+            System.out.println("List is empty");
+        }
+    }
 
     public static <K> void main(String[] args) {
         //Welcome to LinkedList
@@ -84,11 +93,12 @@ public class MyLinkedList<K> {
         MyLinkedList linkedList = new MyLinkedList();
         // addNode adds nodes to end of linked list
         linkedList.addNode(nodeOne);
+        linkedList.appendNode(nodeTwo);
         linkedList.appendNode(nodeThree);
         // displays list values
         linkedList.displayLinkedList();
-        // insert between key 56 and key 70
-        linkedList.insertBetweenTwoKeys(56,70,nodeTwo);
+        // delete node at head
+        linkedList.deleteNodeAtHead();
         // display final list
         linkedList.displayLinkedList();
     }
