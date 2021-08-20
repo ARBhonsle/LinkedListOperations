@@ -73,7 +73,7 @@ public class MyLinkedList<K> {
         }
     }
     // delete node at head of list
-    public void deleteNodeAtHead(){
+    public void pop(){
         System.out.println("Delete node at head of linked list: ");
         if(this.head!=null){
             head=head.getNext();
@@ -98,7 +98,7 @@ public class MyLinkedList<K> {
         // displays list values
         linkedList.displayLinkedList();
         // delete node at head
-        linkedList.deleteNodeAtHead();
+        linkedList.pop();
         // display final list
         linkedList.displayLinkedList();
     }
