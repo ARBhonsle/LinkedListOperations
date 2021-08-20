@@ -13,6 +13,7 @@ public class MyLinkedList<K> {
     public MyLinkedList() {
         this.head = null;
     }
+
     // displays linked list
     public void displayLinkedList() {
         System.out.print("Display linked list: ");
@@ -26,9 +27,10 @@ public class MyLinkedList<K> {
             System.out.println("null");
         }
     }
+
     // adds node at head
     public void addNode(INode<K> myNode) {
-        System.out.println("Adding at head of linked list: "+myNode.getKey());
+        System.out.println("Adding at head of linked list: " + myNode.getKey());
         if (this.head == null) {
             this.head = myNode;
         } else {
@@ -40,7 +42,7 @@ public class MyLinkedList<K> {
 
     // adds node at end of list
     public void appendNode(INode<K> myNode) {
-        System.out.println("Adding at End of linked list: "+myNode.getKey());
+        System.out.println("Adding at End of linked list: " + myNode.getKey());
         if (this.head == null) {
             this.head = myNode;
         } else {
@@ -54,7 +56,7 @@ public class MyLinkedList<K> {
 
     // inserts node between two keys
     public void insertBetweenTwoKeys(K keyPrev, K keyNext, INode<K> myNode) {
-        System.out.println("Insert between nodes: "+keyPrev+" and "+keyNext+" key: "+myNode.getKey());
+        System.out.println("Insert between nodes: " + keyPrev + " and " + keyNext + " key: " + myNode.getKey());
         INode<K> node = myNode;
         if (this.head != null) {
             INode<K> temp = head, tempPrev = head;
@@ -64,7 +66,7 @@ public class MyLinkedList<K> {
                     temp.setNext(node);
                     break;
                 }
-                temp=tempPrev;
+                temp = tempPrev;
                 tempPrev = tempPrev.getNext();
             }
         } else {
@@ -87,7 +89,7 @@ public class MyLinkedList<K> {
         // displays list values
         linkedList.displayLinkedList();
         // inserts node between key 56 and key 70
-        linkedList.insertBetweenTwoKeys(56,70,nodeTwo);
+        linkedList.insertBetweenTwoKeys(56, 70, nodeTwo);
         // displays final list
         linkedList.displayLinkedList();
     }
