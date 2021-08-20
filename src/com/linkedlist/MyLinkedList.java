@@ -6,15 +6,15 @@ package com.linkedlist;
  * @param <K>
  */
 public class MyLinkedList<K> {
-    // head and tail of linked list set
+    // head of linked list
     public INode<K> head;
 
-    // constructor defined
+    // constructor
     public MyLinkedList() {
         this.head = null;
     }
 
-    // display linked list
+    // displays linked list
     public void displayLinkedList() {
         System.out.print("Display linked list: ");
         if (head != null) {
@@ -27,7 +27,7 @@ public class MyLinkedList<K> {
         }
     }
 
-    // add node to head
+    // adds node at head
     public void addNode(INode<K> myNode) {
         System.out.println("Adding at head of linked list: "+myNode.getKey());
         if (this.head == null) {
@@ -39,7 +39,7 @@ public class MyLinkedList<K> {
         }
     }
 
-    // add node to end of list
+    // adds node at end of list
     public void appendNode(INode<K> myNode) {
         System.out.println("Adding at End of linked list: "+myNode.getKey());
         if (this.head == null) {
@@ -53,7 +53,7 @@ public class MyLinkedList<K> {
         }
     }
 
-    // insert node between two keys
+    // inserts node between two keys
     public void insertBetweenTwoKeys(K keyPrev, K keyNext, INode<K> myNode) {
         System.out.println("Insert between nodes: "+keyPrev+" and "+keyNext+" key: "+myNode.getKey());
         INode<K> node = myNode;
@@ -87,9 +87,9 @@ public class MyLinkedList<K> {
         linkedList.appendNode(nodeThree);
         // displays list values
         linkedList.displayLinkedList();
-        // insert between key 56 and key 70
+        // inserts node between key 56 and key 70
         linkedList.insertBetweenTwoKeys(56,70,nodeTwo);
-        // display final list
+        // displays final list
         linkedList.displayLinkedList();
     }
 }
