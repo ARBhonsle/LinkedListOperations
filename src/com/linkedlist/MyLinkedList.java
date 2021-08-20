@@ -138,7 +138,28 @@ public class MyLinkedList<K> {
             System.out.println("List is empty");
         }
     }
-
+    // deletes node with given key
+    public void deleteNode(K key){
+        System.out.println("Deletes node with key: "+key);
+        if(this.head!=null){
+            INode<K> temp=head,tempPrev=head;
+            boolean nodeDeleted=false;
+            while (temp.getNext()!=null){
+                if(temp.getKey() == key){
+                    tempPrev.setNext(temp.getNext());
+                    nodeDeleted=true;
+                    break;
+                }
+                tempPrev=temp;
+                temp=temp.getNext();
+            }
+            if(!nodeDeleted){
+                System.out.println("Node with key: "+key+" not found in list");
+            }
+        }else{
+            System.out.println("List is empty");
+        }
+    }
     public static <K> void main(String[] args) {
         //Welcome to LinkedList
         System.out.println("Linked List Implementation");
@@ -158,6 +179,10 @@ public class MyLinkedList<K> {
         INode<Integer> nodeFour = new Node<>(40);
         // inserts new node after given node in linked list
         linkedList.nodeInsertsAfterNode(30, nodeFour);
+        // display list
+        linkedList.displayLinkedList();
+        // deletes node with given key
+        linkedList.deleteNode(40);
         // display final list
         linkedList.displayLinkedList();
     }
