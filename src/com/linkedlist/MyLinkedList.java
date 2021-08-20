@@ -100,6 +100,7 @@ public class MyLinkedList<K> {
 
     // searches node with given key parameter
     public void searchNode(K key) {
+        System.out.println("Searches node with key: " + key + " in linked list");
         if (this.head != null) {
             INode<K> temp = head;
             boolean keyFound = false;
@@ -113,6 +114,25 @@ public class MyLinkedList<K> {
             }
             if (!keyFound) {
                 System.out.println("Key " + key + " not found in linked list");
+            }
+        } else {
+            System.out.println("List is empty");
+        }
+    }
+
+    // inserts new node after node with given key
+    public void nodeInsertsAfterNode(K key, INode myNode) {
+        System.out.println("New Node " + myNode.getKey() + " inserted after node " + key);
+        INode<K> node = myNode;
+        if (this.head != null) {
+            INode<K> temp = head;
+            while (temp.getNext() != null) {
+                if (temp.getKey() == key) {
+                    node.setNext(temp.getNext());
+                    temp.setNext(node);
+                    break;
+                }
+                temp = temp.getNext();
             }
         } else {
             System.out.println("List is empty");
@@ -134,8 +154,10 @@ public class MyLinkedList<K> {
         linkedList.appendNode(nodeThree);
         // displays list values
         linkedList.displayLinkedList();
-        // searches node in linked list
-        linkedList.searchNode(30);
+        // new Node created
+        INode<Integer> nodeFour = new Node<>(40);
+        // inserts new node after given node in linked list
+        linkedList.nodeInsertsAfterNode(30, nodeFour);
         // display final list
         linkedList.displayLinkedList();
     }
