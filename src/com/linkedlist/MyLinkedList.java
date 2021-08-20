@@ -13,19 +13,23 @@ public class MyLinkedList<K> {
     public MyLinkedList() {
         this.head = null;
     }
+
     // display linked list
-    public void displayLinkedList(){
-        if(head!=null){
-            INode<K> temp=head;
-            while (temp!=null){
-                System.out.print(temp.getKey()+"->");
-                temp=temp.getNext();
+    public void displayLinkedList() {
+        System.out.print("Display linked list: ");
+        if (head != null) {
+            INode<K> temp = head;
+            while (temp != null) {
+                System.out.print(temp.getKey() + "->");
+                temp = temp.getNext();
             }
             System.out.println("null");
         }
     }
+
     // add node to head
     public void addNode(INode<K> myNode) {
+        System.out.println("Adding at head of linked list: "+myNode.getKey());
         if (this.head == null) {
             this.head = myNode;
         } else {
@@ -37,14 +41,35 @@ public class MyLinkedList<K> {
 
     // add node to end of list
     public void appendNode(INode<K> myNode) {
+        System.out.println("Adding at End of linked list: "+myNode.getKey());
         if (this.head == null) {
             this.head = myNode;
         } else {
             INode<K> tempNode = this.head;
-            while(tempNode.getNext() != null){
-                tempNode=tempNode.getNext();
+            while (tempNode.getNext() != null) {
+                tempNode = tempNode.getNext();
             }
             tempNode.setNext(myNode);
+        }
+    }
+
+    // insert node between two keys
+    public void insertBetweenTwoKeys(K keyPrev, K keyNext, INode<K> myNode) {
+        System.out.println("Insert between nodes: "+keyPrev+" and "+keyNext+" key: "+myNode.getKey());
+        INode<K> node = myNode;
+        if (this.head != null) {
+            INode<K> temp = head, tempPrev = head;
+            while (tempPrev != null) {
+                if (temp.getKey() == keyPrev && tempPrev.getKey() == keyNext) {
+                    node.setNext(temp.getNext());
+                    temp.setNext(node);
+                    break;
+                }
+                temp=tempPrev;
+                tempPrev = tempPrev.getNext();
+            }
+        } else {
+            System.out.println("List is empty");
         }
     }
 
@@ -58,10 +83,13 @@ public class MyLinkedList<K> {
         // MyLinkedList object created
         MyLinkedList linkedList = new MyLinkedList();
         // addNode adds nodes to end of linked list
-        linkedList.appendNode(nodeOne);
-        linkedList.appendNode(nodeTwo);
+        linkedList.addNode(nodeOne);
         linkedList.appendNode(nodeThree);
         // displays list values
+        linkedList.displayLinkedList();
+        // insert between key 56 and key 70
+        linkedList.insertBetweenTwoKeys(56,70,nodeTwo);
+        // display final list
         linkedList.displayLinkedList();
     }
 }
