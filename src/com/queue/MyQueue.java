@@ -8,26 +8,28 @@ import com.linkedlist.Node;
  */
 public class MyQueue {
     MyLinkedList linkedList;
-    public MyQueue(){
-        linkedList=new MyLinkedList();
+
+    public MyQueue() {
+        linkedList = new MyLinkedList();
     }
 
-    public void enQueue(Integer key){
+    public void enQueue(Integer key) {
         linkedList.appendNode(new Node(key));
     }
-    public void display(){
+
+    public void display() {
         linkedList.displayLinkedList();
     }
 
-    public void deQueue(){
+    public void deQueue() {
         linkedList.pop();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println("Queue Operations");
-        System.out.println("Add node 56, 30, 70 to queue");
         // MyQueue object created
-        MyQueue queue=new MyQueue();
+        MyQueue queue = new MyQueue();
+        System.out.println("Add node 56, 30, 70 to queue");
         queue.enQueue(56);
         queue.enQueue(30);
         queue.enQueue(70);
