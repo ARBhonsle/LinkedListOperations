@@ -26,6 +26,14 @@ public class MyStack {
         linkedList.displayLinkedList();
     }
 
+    public INode<Integer> peek() {
+        return linkedList.head;
+    }
+
+    public void pop() {
+        linkedList.pop();
+    }
+
     public static void main(String[] args) {
         // MyStack object created
         System.out.println("Stack Operations");
@@ -38,6 +46,14 @@ public class MyStack {
         System.out.println("70 pushed to stack");
         stack.push(70);
         System.out.println("Stack displayed");
+        stack.display();
+        System.out.println("Top Node : " + stack.peek().getKey());
+        System.out.println("Pop stack elements: 70, 30, 56");
+        stack.pop();
+        stack.display();
+        stack.pop();
+        stack.display();
+        stack.pop();
         stack.display();
     }
 }
