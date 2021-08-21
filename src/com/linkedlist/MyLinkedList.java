@@ -16,7 +16,7 @@ public class MyLinkedList<K> {
 
     // displays linked list
     public void displayLinkedList() {
-        System.out.print("Display linked list: ");
+        //System.out.print("Display linked list: ");
         if (head != null) {
             INode<K> temp = head;
             while (temp != null) {
@@ -29,7 +29,7 @@ public class MyLinkedList<K> {
 
     // adds node at head of linked list
     public void addNode(INode<K> myNode) {
-        System.out.println("Adding at head of linked list: " + myNode.getKey());
+        //System.out.println("Adding at head of linked list: " + myNode.getKey());
         if (this.head == null) {
             this.head = myNode;
         } else {
@@ -41,7 +41,7 @@ public class MyLinkedList<K> {
 
     // adds node at end of list
     public void appendNode(INode<K> myNode) {
-        System.out.println("Adding at End of linked list: " + myNode.getKey());
+        //System.out.println("Adding at End of linked list: " + myNode.getKey());
         if (this.head == null) {
             this.head = myNode;
         } else {
@@ -55,7 +55,7 @@ public class MyLinkedList<K> {
 
     // inserts node between two keys
     public void insertBetweenTwoKeys(K keyPrev, K keyNext, INode<K> myNode) {
-        System.out.println("Insert between nodes: " + keyPrev + " and " + keyNext + " key: " + myNode.getKey());
+        //System.out.println("Insert between nodes: " + keyPrev + " and " + keyNext + " key: " + myNode.getKey());
         INode<K> node = myNode;
         if (this.head != null) {
             INode<K> temp = head, tempPrev = head;
@@ -75,7 +75,7 @@ public class MyLinkedList<K> {
 
     // deletes node at head of list
     public void pop() {
-        System.out.println("Delete node at head of linked list: ");
+        //System.out.println("Delete node at head of linked list: ");
         if (this.head != null) {
             head = head.getNext();
         } else {
@@ -85,7 +85,7 @@ public class MyLinkedList<K> {
 
     // deletes node at end of linked list
     public void popLast() {
-        System.out.println("Delete node at end of linked list: ");
+        //System.out.println("Delete node at end of linked list: ");
         if (this.head != null) {
             INode<K> tempNode = head, temp = head;
             while (tempNode.getNext() != null) {
@@ -100,7 +100,7 @@ public class MyLinkedList<K> {
 
     // searches node with given key parameter
     public void searchNode(K key) {
-        System.out.println("Searches node with key: " + key + " in linked list");
+        //System.out.println("Searches node with key: " + key + " in linked list");
         if (this.head != null) {
             INode<K> temp = head;
             boolean keyFound = false;
