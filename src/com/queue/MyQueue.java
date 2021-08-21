@@ -21,6 +21,10 @@ public class MyQueue {
         linkedList.displayLinkedList();
     }
 
+    public void deQueue() {
+        linkedList.pop();
+    }
+
     public static void main(String[] args) {
         System.out.println("Queue Operations");
         // MyQueue object created
@@ -30,6 +34,15 @@ public class MyQueue {
         queue.enQueue(30);
         queue.enQueue(70);
         System.out.println("Queue : ");
+        queue.display();
+        System.out.println("Queue dequeue operation for : First element");
+        queue.deQueue();
+        queue.display();
+        System.out.println("Second element");
+        queue.deQueue();
+        queue.display();
+        System.out.println("Third element");
+        queue.deQueue();
         queue.display();
     }
 }
