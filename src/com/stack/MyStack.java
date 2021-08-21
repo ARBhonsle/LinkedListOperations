@@ -1,4 +1,5 @@
 package com.stack;
+
 import com.linkedlist.INode;
 import com.linkedlist.MyLinkedList;
 import com.linkedlist.Node;
@@ -9,24 +10,26 @@ import com.linkedlist.Node;
 public class MyStack {
     MyLinkedList linkedList;
 
-    public MyStack(){
-        linkedList=new MyLinkedList();
+    public MyStack() {
+        linkedList = new MyLinkedList();
     }
 
-    public INode<Integer> createNode(Integer key){
+    public INode<Integer> createNode(Integer key) {
         return new Node<>(key);
     }
 
-    public void push(Integer key){
+    public void push(Integer key) {
         linkedList.addNode(createNode(key));
     }
-    public void display(){
+
+    public void display() {
         linkedList.displayLinkedList();
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // MyStack object created
-        MyStack stack=new MyStack();
+        System.out.println("Stack Operations");
+        MyStack stack = new MyStack();
         // elements pushed to stack
         System.out.println("56 pushed to stack");
         stack.push(56);
